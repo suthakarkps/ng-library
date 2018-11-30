@@ -30,10 +30,10 @@ export class SidebarNavComponent {
     ]
 
     sideBarExpand() {
-        //this.isSidebarExpanded = true;
+        this.isSidebarExpanded = true;
     }
     sideBarCollapse() {
-        //this.isSidebarExpanded = false;
+        this.isSidebarExpanded = false;
     }
 
     sideMenuClick(event, routeUrl, subMenuCount, from) {
