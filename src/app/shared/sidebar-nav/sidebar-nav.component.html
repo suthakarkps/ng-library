@@ -1,0 +1,54 @@
+<div class="navbar-default sidebar" [class.expanded]="isSidebarExpanded" role="navigation" (mouseenter)="sideBarExpand()"
+    (mouseleave)="sideBarCollapse()">
+    <div class="sidebar-nav">
+        <div class="sidebar-head">
+            <h3>
+                <span>Navigation</span>
+                <i class="fa open fa-bars"></i>
+            </h3>
+        </div>
+        <ul class="nav in" class="sideMenu">
+            <li *ngFor="let item of nav; let i = index">
+                <a href="javascript:void(0);" (click)="sideMenuClick($event, item?.routeUrl, item?.subMenu?.length, 'menu')">
+                    <i *ngIf="item.iconName; else noIcon" [class]="item.iconName"></i>
+                    <ng-template #noIcon>
+                        <b class="noIcon">P</b>
+                    </ng-template>
+                    <span class="">
+                        {{item.name}}
+                        <span class="fa fa-chevron-right pull-right" *ngIf="item.subMenu"></span>
+                        <span class="label label-rouded label-inverse pull-right" *ngIf="item.subMenu">{{item.subMenu.length}}</span>
+                    </span>
+                </a>
+                <ul *ngIf="item.subMenu" class="subMenu">
+                    <li *ngFor="let subItem of item.subMenu">
+                        <a href="javascript:void(0);" (click)="sideMenuClick($event, subItem?.routeUrl, subItem?.subMenu?.length, 'subMenu')">
+                            <i *ngIf="subItem.iconName; else noIcon" [class]="subItem.iconName"></i>
+                            <ng-template #noIcon>
+                                <b class="noIcon">P</b>
+                            </ng-template>
+                            <span class="">
+                                {{subItem.name}}
+                                <span class="fa fa-chevron-right pull-right" *ngIf="subItem.subMenu"></span>
+                                <span class="label label-rouded label-inverse pull-right" *ngIf="subItem.subMenu">{{subItem.subMenu.length}}</span>
+                            </span>
+                        </a>
+                        <ul *ngIf="subItem.subMenu" class="addMenu">
+                            <li *ngFor="let addItem of subItem.subMenu">
+                                <a href="javascript:void(0);" (click)="sideMenuClick($event, addItem?.routeUrl, addItem?.innerMenu?.length, 'addMenu')">
+                                    <i *ngIf="addItem.iconName; else noIcon" [class]="addItem.iconName"></i>
+                                    <ng-template #noIcon>
+                                        <b class="noIcon">P</b>
+                                    </ng-template>
+                                    <span class="">
+                                        {{addItem.name}}
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
