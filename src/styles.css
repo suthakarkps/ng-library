@@ -1,3 +1,630 @@
 /* You can add global styles to this file, and also import other style files */
-*{ margin: 0 ; padding: 0 ; font-size: 0.9rem !important}
-li{ list-style-type: none}
+*{ 
+    margin: 0; 
+    padding: 0; 
+    font-size: 0.9rem;
+    outline: none!important;
+    list-style-type: none
+}
+body{
+    overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #b51b3d;   
+    margin: 10px 0;
+    font-weight: 300
+}
+h1 {
+    line-height: 48px;
+    font-size: 36px
+}
+
+h2 {
+    line-height: 36px;
+    font-size: 24px
+}
+
+h3 {
+    line-height: 30px;
+    font-size: 21px
+}
+
+h4 {
+    line-height: 22px;
+    font-size: 18px
+}
+
+h5 {
+    font-size: 18px;
+    font-size: 16px
+}
+
+h5 {
+    font-size: 16px;
+    font-size: 14px
+}
+.dn {
+    display: none
+}
+
+.db {
+    display: block
+}
+p {
+    line-height: 1.6
+}
+
+b {
+    font-weight: 500
+}
+a:hover {
+    outline: 0;
+    text-decoration: none
+}
+
+a:active {
+    outline: 0;
+    text-decoration: none
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none
+}
+hr {
+    border-color: rgba(120, 130, 140, 0.13)
+}
+
+.b-t {
+    border-top: 1px solid rgba(120, 130, 140, 0.13)
+}
+
+.b-b {
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13)
+}
+
+.b-l {
+    border-left: 1px solid rgba(120, 130, 140, 0.13)
+}
+
+.b-r {
+    border-right: 1px solid rgba(120, 130, 140, 0.13)
+}
+
+.b-all {
+    border: 1px solid rgba(120, 130, 140, 0.13)
+}
+
+.b-none {
+    border: 0px!important
+}
+
+.max-height {
+    height: 310px;
+    overflow: auto
+}
+
+.p-0 {
+    padding: 0px!important
+}
+
+.p-10 {
+    padding: 10px!important
+}
+
+.p-20 {
+    padding: 20px!important
+}
+
+.p-30 {
+    padding: 30px!important
+}
+
+.p-l-0 {
+    padding-left: 0px!important
+}
+
+.p-l-10 {
+    padding-left: 10px!important
+}
+
+.p-l-20 {
+    padding-left: 20px!important
+}
+
+.p-l-30 {
+    padding-left: 30px!important
+}
+
+.p-r-0 {
+    padding-right: 0px!important
+}
+
+.p-r-10 {
+    padding-right: 10px!important
+}
+
+.p-r-20 {
+    padding-right: 20px!important
+}
+
+.p-r-30 {
+    padding-right: 30px!important
+}
+
+.p-r-40 {
+    padding-right: 40px!important
+}
+
+.p-t-0 {
+    padding-top: 0px!important
+}
+
+.p-t-10 {
+    padding-top: 10px!important
+}
+
+.p-t-20 {
+    padding-top: 20px!important
+}
+
+.p-t-30 {
+    padding-top: 30px!important
+}
+
+.p-b-0 {
+    padding-bottom: 0px!important
+}
+
+.p-b-10 {
+    padding-bottom: 10px!important
+}
+
+.p-b-20 {
+    padding-bottom: 20px!important
+}
+
+.p-b-30 {
+    padding-bottom: 30px!important
+}
+
+.p-b-40 {
+    padding-bottom: 40px!important
+}
+
+.m-0 {
+    margin: 0px!important
+}
+
+.m-l-5 {
+    margin-left: 5px!important
+}
+
+.m-l-10 {
+    margin-left: 10px!important
+}
+
+.m-l-15 {
+    margin-left: 15px!important
+}
+
+.m-l-20 {
+    margin-left: 20px!important
+}
+
+.m-l-30 {
+    margin-left: 30px!important
+}
+
+.m-l-40 {
+    margin-left: 40px!important
+}
+
+.m-r-5 {
+    margin-right: 5px!important
+}
+
+.m-r-10 {
+    margin-right: 10px!important
+}
+
+.m-r-15 {
+    margin-right: 15px!important
+}
+
+.m-r-20 {
+    margin-right: 20px!important
+}
+
+.m-r-30 {
+    margin-right: 30px!important
+}
+
+.m-r-40 {
+    margin-right: 40px!important
+}
+
+.m-t-5 {
+    margin-top: 5px!important
+}
+
+.m-t-0 {
+    margin-top: 0px!important
+}
+
+.m-t-10 {
+    margin-top: 10px!important
+}
+
+.m-t-15 {
+    margin-top: 15px!important
+}
+
+.m-t-20 {
+    margin-top: 20px!important
+}
+
+.m-t-30 {
+    margin-top: 30px!important
+}
+
+.m-t-40 {
+    margin-top: 40px!important
+}
+
+.m-b-0 {
+    margin-bottom: 0px!important
+}
+
+.m-b-5 {
+    margin-bottom: 5px!important
+}
+
+.m-b-10 {
+    margin-bottom: 10px!important
+}
+
+.m-b-15 {
+    margin-bottom: 15px!important
+}
+
+.m-b-20 {
+    margin-bottom: 20px!important
+}
+
+.m-b-30 {
+    margin-bottom: 30px!important
+}
+
+.m-b-40 {
+    margin-bottom: 40px!important
+}
+
+
+
+/***********************FORMS**************************/
+.form-control-line {
+    border-left: 0 none;
+    border-radius: 0;
+    border-right: 0 none;
+    border-top: 0 none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-left: 0
+}
+.form-horizontal .form-group {
+    margin-bottom: 25px
+}
+
+.form-group {
+    margin-bottom: 25px
+}
+
+.form-material .form-group {
+    overflow: hidden
+}
+
+.form-material .form-control {
+    background-color: rgba(0, 0, 0, 0);
+    background-position: center bottom, center calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    padding: 0;
+    -webkit-transition: background 0s ease-out 0s;
+    -o-transition: background 0s ease-out 0s;
+    transition: background 0s ease-out 0s
+}
+
+.form-material .form-control,
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b51b3d), to(#b51b3d)), -webkit-gradient(linear, left top, left bottom, from(rgba(120, 130, 140, 0.13)), to(rgba(120, 130, 140, 0.13)));
+    background-image: -webkit-linear-gradient(#b51b3d, #b51b3d), -webkit-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+    background-image: -o-linear-gradient(#b51b3d, #b51b3d), -o-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+    background-image: linear-gradient(#b51b3d, #b51b3d), linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+    border: 0 none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    float: none
+}
+
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-size: 100% 2px, 100% 1px;
+    outline: 0 none;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s
+}
+
+
+/**************************CHECKBOX & RADIO BUTTON***********************************/
+
+.checkbox {
+    padding-left: 20px
+}
+
+.checkbox label {
+    display: inline-block;
+    padding-left: 5px;
+    position: relative
+}
+
+.checkbox label:before {
+    -o-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    background-color: #ffffff;
+    border-radius: 1px;
+    border: 1px solid rgba(120, 130, 140, 0.13);
+    content: "";
+    display: inline-block;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    width: 17px;
+    outline: none!important
+}
+
+.checkbox label:after {    
+    display: inline-block;
+    font-size: 11px;
+    height: 16px;
+    left: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    position: absolute;
+    top: 0;
+    width: 16px
+}
+
+.checkbox input[type=checkbox] {
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    outline: none!important
+}
+
+.checkbox input[type=checkbox]:disabled+label {
+    opacity: 0.65
+}
+
+.checkbox input[type=checkbox]:focus+label:before {
+    outline-offset: -2px;
+    outline: none;
+    outline: thin dotted
+}
+
+.checkbox input[type=checkbox]:checked+label:after {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    font-weight: 900
+}
+
+.checkbox input[type=checkbox]:disabled+label:before {
+    background-color: #e4e7ea;
+    cursor: not-allowed
+}
+
+.checkbox.checkbox-circle label:before {
+    border-radius: 50%
+}
+
+.checkbox.checkbox-inline {
+    margin-top: 0
+}
+
+.checkbox.checkbox-single label {
+    height: 17px
+}
+
+.checkbox-primary input[type=checkbox]:checked+label:before {
+    background-color: #b51b3d;
+    border-color: #b51b3d
+}
+
+.checkbox-primary input[type=checkbox]:checked+label:after {
+    color: #ffffff
+}
+
+.radio {
+    padding-left: 20px
+}
+
+.radio label {
+    display: inline-block;
+    padding-left: 5px;
+    position: relative
+}
+
+.radio label:before {
+    -o-transition: border 0.5s ease-in-out;
+    -webkit-transition: border 0.5s ease-in-out;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 1px solid rgba(120, 130, 140, 0.13);
+    content: "";
+    display: inline-block;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    position: absolute;
+    transition: border 0.5s ease-in-out;
+    width: 17px;
+    outline: none!important
+}
+
+.radio label:after {
+    -moz-transition: -moz-transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -o-transition: -o-transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -webkit-transform: scale(0, 0);
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);    
+    border-radius: 50%;
+    content: " ";
+    display: inline-block;
+    height: 7px;
+    left: 5px;
+    margin-left: -20px;
+    position: absolute;
+    top: 5px;
+    transform: scale(0, 0);
+    transition: -webkit-transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -o-transition: transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33), -webkit-transform 0.3s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    width: 7px
+}
+
+.radio input[type=radio] {
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    outline: none!important
+}
+
+.radio input[type=radio]:disabled+label {
+    opacity: 0.65
+}
+
+.radio input[type=radio]:focus+label:before {
+    outline-offset: -2px;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline: thin dotted
+}
+
+.radio input[type=radio]:checked+label:after {
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1)
+}
+
+.radio input[type=radio]:disabled+label:before {
+    cursor: not-allowed
+}
+
+.radio.radio-inline {
+    margin-top: 0
+}
+
+.radio.radio-single label {
+    height: 17px
+}
+
+.radio-primary input[type=radio]+label:after {
+    background-color: #b51b3d
+}
+
+
+/*********************BUTTON*************************/
+.btn-default,
+.btn-default.disabled {
+    background: #b51b3d;
+    border: 1px solid #b51b3d;
+    color: #fff;
+}
+
+.btn-default.disabled.focus,
+.btn-default.disabled:focus,
+.btn-default.disabled:hover,
+.btn-default.focus,
+.btn-default:focus,
+.btn-default:hover {
+    opacity: 0.8;
+    border: 1px solid #b51b3d;
+    background: #b51b3d
+}
+.btn-facebook {
+    color: #ffffff!important;
+    background-color: #3b5998!important
+}
+
+.btn-twitter {
+    color: #ffffff!important;
+    background-color: #55acee!important
+}
+
+.btn-linkedin {
+    color: #ffffff!important;
+    background-color: #007bb6!important
+}
+
+.btn-dribbble {
+    color: #ffffff!important;
+    background-color: #ea4c89!important
+}
+
+.btn-googleplus {
+    color: #ffffff!important;
+    background-color: #dd4b39!important
+}
+
+.btn-instagram {
+    color: #ffffff!important;
+    background-color: #3f729b!important
+}
+
+.btn-pinterest {
+    color: #ffffff!important;
+    background-color: #cb2027!important
+}
+
+.btn-dropbox {
+    color: #ffffff!important;
+    background-color: #007ee5!important
+}
+
+.btn-flickr {
+    color: #ffffff!important;
+    background-color: #ff0084!important
+}
+
+.btn-tumblr {
+    color: #ffffff!important;
+    background-color: #32506d!important
+}
+
+.btn-skype {
+    color: #ffffff!important;
+    background-color: #00aff0!important
+}
+
+.btn-youtube {
+    color: #ffffff!important;
+    background-color: #bb0000!important
+}
+
+.btn-github {
+    color: #ffffff!important;
+    background-color: #171515!important
+}

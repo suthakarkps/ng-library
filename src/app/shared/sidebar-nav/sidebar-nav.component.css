@@ -2,13 +2,13 @@
 .sidebar {
  width: 60px;
  background: #b51b3d;
- position: absolute;
+ position: fixed;
  height: 100vh;
+ z-index: 1;
 }
 .sidebar .sidebar-head {  
  width: 60px;
- height: 60px;
- position: fixed;
+ height: 60px; 
  z-index: 10;
  background: #fab915;
  border-bottom: 1px solid #b51b3d;
@@ -24,11 +24,11 @@
 .sidebar .sidebar-head h3 span{ 
  display: none;
 }
-.sideMenu {
-    padding-top: 60px;
+.sideMenu {    
     overflow-x: auto;
-    height: calc(100vh);
-    margin: 0
+    height: 100vh;
+    margin: 0;
+    border-bottom: 3px solid #fab915;
 }
 .sideMenu li{
  width: 100%;

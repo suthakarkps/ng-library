@@ -1,0 +1,46 @@
+#wrapper {
+    width: 100%
+}
+
+.white-box {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.white-box .box-title {
+    margin: 0px 0px 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px
+}
+.logo-icon{
+    width: 50px;
+}
+.logo-text{
+    width: 150px;
+}
+.login-register {
+    background: url(../../assets/images/login-bg.jpg) no-repeat center left / cover!important;
+    height: 100%;
+    position: fixed
+}
+
+.login-box {
+    background: #ffffff;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 10%
+}
+.login-sidebar {
+    position: absolute;
+    right: 0px;
+    margin-top: 0px;
+    height: 100%
+}
+
+@media (max-width:480px) {
+    .login-box {
+        width: 100%
+    }
+}

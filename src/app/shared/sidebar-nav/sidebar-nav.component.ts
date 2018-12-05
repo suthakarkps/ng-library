@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+declare var $;
 
 @Component({
     selector: 'sidebar-nav',
@@ -6,8 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['./sidebar-nav.component.css']
 })
 
-export class SidebarNavComponent {
-    private isSidebarExpanded = true;
+export class SidebarNavComponent implements OnInit {
+    private isSidebarExpanded = false;
     private nav = [
         { name: "suthakar", iconName: "fa fa-tachometer" },
         { name: "suthakar", iconName: "fa fa-tachometer" },
@@ -27,7 +28,13 @@ export class SidebarNavComponent {
         { name: "suthakar" },
         { name: "raja", subMenu: [{ name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }] },
         { name: "raja", subMenu: [{ name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }, { name: "subMenu1", iconName: "fa fa-tachometer" }] }
-    ]
+    ];
+
+    ngOnInit() {
+        $('.sideMenu').slimScroll({
+            height: window.innerHeight - 60 + 'px'
+        });
+    }
 
     sideBarExpand() {
         this.isSidebarExpanded = true;

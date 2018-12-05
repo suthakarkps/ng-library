@@ -2,7 +2,45 @@
     display: inline-block;
     width: 100%;
     padding-left: 60px;
-    height: 60px;
-    background: #f5f5f5;
-    border-bottom: 1px solid #eee;
+    height: 60px;     
 } 
+.navbar{
+    height: 60px;
+    border-bottom: 1px solid #eee;
+}
+.navbar-brand{
+    color: #b51b3d;
+    font-size: 24px;
+    font-weight: bold;
+}
+#userProfileDropdown{ 
+    padding: 0
+}
+.userProfileDropdown{    
+    right: 0px;
+    margin: 0px;
+    left: -100px;
+    width: 180px;
+    margin-top: 10px;
+}
+.userProfileDropdown::before{
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -7px;
+    right: 50px;
+}
+.userProfileDropdown::after{
+    content: '';
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    position: absolute;
+    top: -6px;
+    right: 51px;
+}

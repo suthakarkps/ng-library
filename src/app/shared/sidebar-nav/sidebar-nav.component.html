@@ -9,7 +9,7 @@
         </div>
         <ul class="nav in" class="sideMenu">
             <li *ngFor="let item of nav; let i = index">
-                <a href="javascript:void(0);" (click)="sideMenuClick($event, item?.routeUrl, item?.subMenu?.length, 'menu')">
+                <a [class.active]="i==0" href="javascript:void(0);" (click)="sideMenuClick($event, item?.routeUrl, item?.subMenu?.length, 'menu')">
                     <i *ngIf="item.iconName; else noIcon" [class]="item.iconName"></i>
                     <ng-template #noIcon>
                         <b class="noIcon">P</b>
