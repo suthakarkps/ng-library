@@ -1,13 +1,12 @@
 <section id="wrapper" class="login-register">
     <div class="login-box login-sidebar">
         <div class="white-box m-t-40">
-            <form class="form-horizontal form-material  m-t-20" id="loginform">
+            <form class="form-horizontal form-material  m-t-20" (ngSubmit)="onSubmit()" #loginForm="ngForm">
                 <a href="javascript:void(0)" class="text-center db">
                     <img class="logo-icon" src="assets/images/logo-a.png" alt="Home">
                     <br>
                     <img class="logo-text m-t-20" src="assets/images/logo-angular.png" alt="Home">
                 </a>
-
                 <div class="form-group m-t-40">
                     <div class="col-xs-12">
                         <input class="form-control" type="text" required="" placeholder="Username">
@@ -25,13 +24,15 @@
                             <label for="checkbox-signup"> Remember me </label>
                         </div>
                         <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i>
-                            Forgot pwd?</a>
+                            Forgot pwd?
+                        </a>
                     </div>
                 </div>
                 <div class="form-group text-center m-t-20">
                     <div class="col-xs-12">
-                        <button class="btn btn-default btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log
-                            In</button>
+                        <button class="btn btn-default btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">
+                            Log In
+                        </button>
                     </div>
                 </div>
             </form>

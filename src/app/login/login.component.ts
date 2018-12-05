@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'login',
+    selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
 
 export class LoginComponent {
-
+    constructor(
+        private _router: Router
+    ) { }
+    onSubmit() {
+        this._router.navigate(['admin']);
+    }
 }
