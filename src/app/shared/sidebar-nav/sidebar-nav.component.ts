@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $;
 
 @Component({
@@ -8,10 +9,11 @@ declare var $;
 })
 
 export class SidebarNavComponent implements OnInit {
+    constructor(private _router: Router) { }
     private isSidebarExpanded = false;
     private nav = [
-        { name: 'suthakar', iconName: 'fa fa-tachometer' },
-        { name: 'suthakar', iconName: 'fa fa-tachometer' },
+        { name: 'Dashboard', iconName: 'fa fa-tachometer', routeUrl: 'admin/dashboard' },
+        { name: 'Grid', iconName: 'fa fa-table', routeUrl: 'admin/grid' },
         {
             name: 'raja', iconName: 'fa fa-tachometer', subMenu:
                 [
@@ -115,6 +117,9 @@ export class SidebarNavComponent implements OnInit {
     }
 
     sideMenuClick(event, routeUrl, subMenuCount, from) {
+        if (routeUrl) {
+            this._router.navigate([routeUrl]);
+        }
         if (subMenuCount) {
             event.currentTarget.classList.toggle('expand');
         } else {
@@ -130,7 +135,6 @@ export class SidebarNavComponent implements OnInit {
                 }
             }
 
-            event.currentTarget.classList.add('active');
             if (from === 'subMenu') {
                 event.currentTarget.parentElement.parentElement.previousElementSibling.classList.add('selected');
             } else if (from === 'addMenu') {
@@ -138,6 +142,8 @@ export class SidebarNavComponent implements OnInit {
                 mainMenu.classList.add('selected');
                 event.currentTarget.parentElement.parentElement.previousElementSibling.classList.add('selected');
             }
+
+            event.currentTarget.classList.add('active');
         }
     }
 }

@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-    margin: 0;
+    margin:0;
     padding: 0;
     font-size: 0.9rem;
     outline: none!important;
     list-style-type: none
+}
+
+dl, ol, ul{
+    margin: 0 !important;
 }
 
 body {
@@ -625,8 +629,351 @@ hr {
     background-color: #171515!important
 }
 
+/**************************PANEL**********************************/
+
+.white-box {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.white-box .box-title {
+    margin: 0px 0px 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px
+}
+
+.theme-box {
+    background: #b51b3d;
+    color: #fff;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.theme-box .box-title {
+    margin: 0px 0px 12px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px
+}
+
+.highlight-box {
+    background: #fab915;
+    color: #fff;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.highlight-box .box-title {
+    margin: 0px 0px 12px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.two-part li {
+    width: 48.8%
+}
+
+.two-part li i {
+    font-size: 50px
+}
+
+.two-part li span {
+    font-size: 50px;
+    font-weight: 100;
+    font-family: 'Rubik', sans-serif
+}
+
+.panel {
+    border-radius: 0px;
+    margin-bottom: 30px;
+    border: 0px;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1)
+}
+
+.panel .panel-heading {
+    border-radius: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 20px 25px
+}
+
+.panel .panel-heading .panel-title {
+    font-size: 16px;
+    color: #313131
+}
+
+.panel .panel-heading a i {
+    font-size: 12px;
+    margin-left: 8px
+}
+
+.panel .panel-action {
+    float: right
+}
+
+.panel .panel-action a {
+    opacity: 0.5
+}
+
+.panel .panel-action a:hover {
+    opacity: 1
+}
+
+.panel .panel-body {
+    padding: 25px
+}
+
+.panel .panel-body:first-child h3 {
+    margin-top: 0px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase
+}
+
+.panel .panel-footer {
+    background: #ffffff;
+    border-radius: 0px;
+    padding: 20px 25px
+}
+
+.panel-green, .panel-success {
+    border-color: #4caf50
+}
+
+.panel-green .panel-heading, .panel-success .panel-heading {
+    border-color: #4caf50;
+    color: white;
+    background-color: #4caf50
+}
+
+.panel-green .panel-heading a, .panel-success .panel-heading a {
+    color: #ffffff
+}
+
+.panel-green .panel-heading a:hover, .panel-success .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-green a, .panel-success a {
+    color: #4caf50
+}
+
+.panel-green a:hover, .panel-success a:hover {
+    color: #357a38
+}
+
+.panel-black, .panel-inverse {
+    border-color: #4c5667
+}
+
+.panel-black .panel-heading, .panel-inverse .panel-heading {
+    border-color: #4c5667;
+    color: white;
+    background-color: #4c5667
+}
+
+.panel-black .panel-heading a, .panel-inverse .panel-heading a {
+    color: #ffffff
+}
+
+.panel-black .panel-heading a:hover, .panel-inverse .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-black a, .panel-inverse a {
+    color: #4c5667
+}
+
+.panel-black a:hover, .panel-inverse a:hover {
+    color: #2c313b
+}
+
+.panel-darkblue, .panel-primary {
+    border-color: #707cd2
+}
+
+.panel-darkblue .panel-heading, .panel-primary .panel-heading {
+    border-color: #707cd2;
+    color: white;
+    background-color: #707cd2
+}
+
+.panel-darkblue .panel-heading a, .panel-primary .panel-heading a {
+    color: #ffffff
+}
+
+.panel-darkblue .panel-heading a:hover, .panel-primary .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-darkblue a, .panel-primary a {
+    color: #707cd2
+}
+
+.panel-darkblue a:hover, .panel-primary a:hover {
+    color: #3b4abb
+}
+
+.panel-blue, .panel-info {
+    border-color: #1e88e5
+}
+
+.panel-blue .panel-heading, .panel-info .panel-heading {
+    border-color: #1e88e5;
+    color: white;
+    background-color: #1e88e5
+}
+
+.panel-blue .panel-heading a, .panel-info .panel-heading a {
+    color: #ffffff
+}
+
+.panel-blue .panel-heading a:hover, .panel-info .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-blue a, .panel-info a {
+    color: #1e88e5
+}
+
+.panel-blue a:hover, .panel-info a:hover {
+    color: #1360a4
+}
+
+.panel-danger, .panel-red {
+    border-color: #f44336
+}
+
+.panel-danger .panel-heading, .panel-red .panel-heading {
+    border-color: #f44336;
+    color: white;
+    background-color: #f44336
+}
+
+.panel-danger .panel-heading a, .panel-red .panel-heading a {
+    color: #ffffff
+}
+
+.panel-danger .panel-heading a:hover, .panel-red .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-danger a, .panel-red a {
+    color: #f44336
+}
+
+.panel-danger a:hover, .panel-red a:hover {
+    color: #d2190b
+}
+
+.panel-warning, .panel-yellow {
+    border-color: #ff9800
+}
+
+.panel-warning .panel-heading, .panel-yellow .panel-heading {
+    border-color: #ff9800;
+    color: white;
+    background-color: #ff9800
+}
+
+.panel-warning .panel-heading a, .panel-yellow .panel-heading a {
+    color: #ffffff
+}
+
+.panel-warning .panel-heading a:hover, .panel-yellow .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-warning a, .panel-yellow a {
+    color: #ff9800
+}
+
+.panel-warning a:hover, .panel-yellow a:hover {
+    color: #b36a00
+}
+
+.panel-theme, .panel-themecolor {
+    border-color: #b51b3d
+}
+
+.panel-theme .panel-heading, .panel-themecolor .panel-heading {
+    border-color: #b51b3d;
+    color: white;
+    background-color: #b51b3d
+}
+
+.panel-theme .panel-heading a, .panel-themecolor .panel-heading a {
+    color: #ffffff
+}
+
+.panel-theme .panel-heading a:hover, .panel-themecolor .panel-heading a:hover {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.panel-theme a, .panel-themecolor a {
+    color: #b51b3d
+}
+
+.panel-theme a:hover, .panel-themecolor a:hover {
+    color: #177eac
+}
+
+.panel-default, .panel-white {
+    border-color: rgba(120, 130, 140, 0.13)
+}
+
+.panel-default .panel-heading, .panel-white .panel-heading {
+    color: #313131;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13)
+}
+
+.panel-default .panel-body, .panel-white .panel-body {
+    color: #313131
+}
+
+.panel-default .panel-action a, .panel-white .panel-action a {
+    color: #313131;
+    opacity: 0.5
+}
+
+.panel-default .panel-action a:hover, .panel-white .panel-action a:hover {
+    opacity: 1;
+    color: #313131
+}
+
+.panel-default .panel-footer, .panel-white .panel-footer {
+    background: #ffffff;
+    color: #313131;
+    border-top: 1px solid rgba(120, 130, 140, 0.13)
+}
+
 /************************APP******************************/
 
 .page-wrapper {
     padding: 15px 15px 15px 75px
+}
+
+
+/****************************HighCharts*********************************/
+.highcharts-menu-item:hover{
+    background-color: #b51b3d !important;
 }

@@ -5,6 +5,7 @@
  position: fixed;
  height: 100vh;
  z-index: 1;
+ top: 0;
 }
 .sidebar .sidebar-head {  
  width: 60px;
@@ -149,7 +150,7 @@
 .sidebar.expanded .sidebar-head h3 span{ 
     display: inherit;
     float: left;
-    margin-left: 7px;
+    margin-left: 10px;
     font-size: 18px;
 }
 .sidebar.expanded .sideMenu li a{ 
