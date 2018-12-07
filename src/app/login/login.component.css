@@ -2,23 +2,26 @@
     width: 100%
 }
 
-.logo-icon{
+.logo-icon {
     width: 50px;
 }
-.logo-text{
+
+.logo-text {
     width: 150px;
 }
+
 .login-register {
     background: url(../../assets/images/login-bg.jpg) no-repeat center left / cover!important;
     height: 100%;
     position: fixed
 }
 
-.login-box {    
+.login-box {
     width: 400px;
     margin: 0 auto;
     margin-top: 10%
 }
+
 .login-sidebar {
     position: absolute;
     right: 0px;
@@ -26,7 +29,7 @@
     height: 100%
 }
 
-.login-sidebar .white-box{
+.login-sidebar .white-box {
     background-color: transparent
 }
 
