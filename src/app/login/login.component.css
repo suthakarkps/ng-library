@@ -19,7 +19,8 @@
 .login-box {
     width: 400px;
     margin: 0 auto;
-    margin-top: 10%
+    margin-top: 10%;
+    background: #fff;
 }
 
 .login-sidebar {

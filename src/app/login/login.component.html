@@ -1,7 +1,8 @@
 <section id="wrapper" class="login-register">
+    <spinner *ngIf="spinner" [size]="50" [overlay]="true"></spinner>
     <div class="login-box login-sidebar">
         <div class="white-box m-t-40">
-            <form class="form-horizontal form-material  m-t-20" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <form class="form-horizontal form-material  m-t-20" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <a href="javascript:void(0)" class="text-center db">
                     <img class="logo-icon" src="assets/images/logo-a.png" alt="Home">
                     <br>
@@ -9,12 +10,14 @@
                 </a>
                 <div class="form-group m-t-40">
                     <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="Username">
+                        <input class="form-control" formControlName="username" type="text" placeholder="Username"
+                            [ngClass]="{ 'invalid': Form.username.touched && Form.username.errors }">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" placeholder="Password">
+                        <input class="form-control" formControlName="password" type="password" placeholder="Password"
+                            [ngClass]="{ 'invalid': Form.password.touched && Form.password.errors }">
                     </div>
                 </div>
                 <div class="form-group">
@@ -28,9 +31,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="form-group text-center m-t-20">
+                <div class="form-group text-center">
                     <div class="col-xs-12">
-                        <button class="btn btn-default btn-lg btn-block text-uppercase" type="submit">
+                        <button class="btn btn-default btn-lg btn-block text-uppercase" [ngClass]="{'disabled': !loginForm.valid}"
+                            type="submit" [disabled]="!loginForm.valid">
                             Log In
                         </button>
                     </div>

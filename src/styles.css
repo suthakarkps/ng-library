@@ -553,14 +553,27 @@ hr {
 
 /*********************BUTTON*************************/
 
-.btn-default, .btn-default.disabled {
+.btn-default {
     background: #b51b3d;
     border: 1px solid #b51b3d;
     color: #fff;
 }
 
-.btn-default.disabled.focus, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default.focus, .btn-default:focus, .btn-default:hover {
+.btn-default.focus, .btn-default:focus, .btn-default:hover {
     opacity: 0.8;
+    border: 1px solid #2f4aff;
+    background: #2f4aff;
+}
+
+.btn-default.disabled {
+    opacity: 0.5;
+    background: #b51b3d;
+    border: 1px solid #b51b3d;
+    color: #fff;
+}
+
+.btn-default.disabled.focus, .btn-default.disabled:focus, .btn-default.disabled:hover {
+    opacity: 0.5;
     border: 1px solid #b51b3d;
     background: #b51b3d
 }
@@ -1064,17 +1077,22 @@ body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
     color: #ffffff;
 }
 
-body .ui-dialog .ui-dialog-content{
+body .ui-dialog .ui-dialog-content {
     border: 0px none;
 }
 
-body .ui-dialog .ui-dialog-footer{
+body .ui-dialog .ui-dialog-footer {
     border: 0px none;
     border-top: 1px solid #fab915;
 }
+
 
 /************************APP******************************/
 
 .page-wrapper {
     padding: 75px 15px 15px 75px
+}
+
+input.invalid::placeholder{
+    color: red
 }
