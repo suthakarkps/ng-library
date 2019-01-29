@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 
 export class SharedService {
-  sharedValues = [];
-  takeAssessmentScreen = false;
-  constructor(private _http: HttpClient) { }
+  private sharedValues = [];
+  private message = new Subject<any>();
+
+  public observedMessage$ = this.message.asObservable();
+
+  constructor(private _http: HttpClient) {
+  }
+
+
+  /**********************Shared Variable********************** */
 
   public setValue(prop: string, value: any) {
     if (this.sharedValues.length > 0) {
@@ -59,6 +66,18 @@ export class SharedService {
     );
   }
 
+  /*************End************* */
+
+  /**********************Primeng Message**************************/
+
+  broadcastMessage(msg) {
+    this.message.next(msg)
+  }
+
+  /**********************End**************************/
+
+  /**********************API Calls**************************/
+
   getToken(url: string, data): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -80,9 +99,9 @@ export class SharedService {
 
   get(url: string): Observable<any> {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    // headers.append('Authorization', localStorage.getItem("id_token"));
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer "+localStorage.getItem("token")
+    });    
     const options = { headers: headers };
     return this._http.get(url, options)
       .pipe(

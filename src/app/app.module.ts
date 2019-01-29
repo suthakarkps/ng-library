@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
 import { AppRoutingModule } from './app.routing';
 import { SharedModule } from './shared/shared.module';
 
@@ -23,10 +26,14 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastModule,
     AppRoutingModule,
     SharedModule
   ],
-  providers: [SharedService],
+  providers: [
+    MessageService,
+    SharedService
+  ],
   bootstrap: [AppComponent]
 })
 

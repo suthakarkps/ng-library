@@ -37,12 +37,38 @@ export class LoginComponent implements OnInit {
         };
         this._sharedService.getToken(this._sharedService.getValue('endpoint') + '/token', postData)
             .subscribe(response => {
-                this.spinner = false;
-                alert('s');
+                console.log(response);
+                localStorage.setItem("token", response.access_token)                
+                this.getUserDetails();
             }, error => {
                 this.spinner = false;
-                alert('e');
+                this._sharedService.broadcastMessage({
+                    severity: 'error',
+                    summary: 'Login Failure',
+                    detail: 'Invalid Username or Password'
+                });
+                this.loginForm.reset();
             });
         // this._router.navigate(['admin']);
+    }
+
+    getUserDetails() {
+        this._sharedService.get(this._sharedService.getValue('endpoint') + '/api/SuperAdmin/GetLoginUser')
+            .subscribe(response => {
+                this._sharedService.broadcastMessage({
+                    severity: 'success',
+                    summary: 'Login Successful',
+                    detail: 'You will be redirect to respective page'
+                });
+                this.loginForm.reset();
+            }, error => {
+                this.spinner = false;
+                this._sharedService.broadcastMessage({
+                    severity: 'error',
+                    summary: 'Login Failure',
+                    detail: 'Invalid Username or Password'
+                });
+                this.loginForm.reset();
+            });
     }
 }
