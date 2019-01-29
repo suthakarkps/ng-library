@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     }
 
     getUserDetails() {
-        this._sharedService.get(this._sharedService.getValue('endpoint') + '/api/SuperAdmin/GetLoginUser')
+        this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/SuperAdmin/GetLoginUser', {})
             .subscribe(response => {
                 this._sharedService.broadcastMessage({
                     severity: 'success',

@@ -113,9 +113,9 @@ export class SharedService {
 
   post(url: string, data): Observable<any> {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    // headers.append('Authorization', localStorage.getItem("id_token"));
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer "+localStorage.getItem("token")
+    });        
     const options = { headers: headers };
     const body = data;
 
