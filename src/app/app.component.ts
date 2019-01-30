@@ -10,17 +10,19 @@ import { SharedService } from './shared/shared.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  dt:any = new Date();  
 
-  constructor(
-    private messageService: MessageService,
-    private _sharedService: SharedService) {
-      this._sharedService.observedMessage$.subscribe(msg => {
-        this.messageService.add(msg);
-      });
-    }
+constructor(
+  private messageService: MessageService,
+  private _sharedService: SharedService) {
+  this._sharedService.observedMessage$.subscribe(msg => {
+    this.messageService.add(msg);
+  });
+}
 
-  ngOnInit() {
-    this._sharedService.setValue('endpoint', Config.environment['endpoint']);
-    this._sharedService.setValue('local', Config.environment['local']);
-  }
+ngOnInit() {
+  this.dt.setSeconds(this.dt.getSeconds() + 3599);
+  this._sharedService.setValue('endpoint', Config.environment['endpoint']);
+  this._sharedService.setValue('local', Config.environment['local']);
+}
 }

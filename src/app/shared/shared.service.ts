@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {MessageService} from 'primeng/api';
 
 @Injectable()
 
@@ -11,7 +12,9 @@ export class SharedService {
 
   public observedMessage$ = this.message.asObservable();
 
-  constructor(private _http: HttpClient) {
+  constructor(
+    private _http: HttpClient,
+    private _messageService: MessageService) {
   }
 
 
@@ -74,6 +77,10 @@ export class SharedService {
     this.message.next(msg)
   }
 
+  clearMessage(){
+    this._messageService.clear();
+  }
+
   /**********************End**************************/
 
   /**********************API Calls**************************/
@@ -114,7 +121,7 @@ export class SharedService {
   post(url: string, data): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': "Bearer "+localStorage.getItem("token")
+      'Authorization': 'Bearer '+localStorage.getItem('token')
     });        
     const options = { headers: headers };
     const body = data;
@@ -128,8 +135,10 @@ export class SharedService {
   }
 
   postFile(url, file): Observable<any> {
-    const headers = new HttpHeaders();
-    // headers.append('Authorization', localStorage.getItem("id_token"));
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+localStorage.getItem('token')
+    });
     const options = { headers: headers };
     const formData: FormData = new FormData();
     formData.append('importedFile', file);

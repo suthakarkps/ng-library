@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   local: '/assets/localdata',
-  endpoint: 'https://saneforcewebapi.azurewebsites.net'
+  endpoint: 'https://saneforcewebapidev.azurewebsites.net'
 };
 
 /*

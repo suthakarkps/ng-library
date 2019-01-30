@@ -10,12 +10,12 @@
         <ul class="nav in" class="sideMenu">
             <li *ngFor="let item of nav; let i = index">
                 <a [class.active]="i==0" href="javascript:void(0);" (click)="sideMenuClick($event, item?.routeUrl, item?.subMenu?.length, 'menu')">
-                    <i *ngIf="item.iconName; else noIcon" [class]="item.iconName"></i>
+                    <i *ngIf="item.IconName; else noIcon" [class]="item.IconName"></i>
                     <ng-template #noIcon>
                         <b class="noIcon">P</b>
                     </ng-template>
                     <span class="">
-                        {{item.name}}
+                        {{item.MenuDescription}}
                         <span class="fa fa-chevron-right pull-right" *ngIf="item.subMenu"></span>
                         <span class="label label-rouded label-inverse pull-right" *ngIf="item.subMenu">{{item.subMenu.length}}</span>
                     </span>

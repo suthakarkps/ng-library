@@ -8,6 +8,8 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
 import { AppRoutingModule } from './app.routing';
+import { AppGuardService, SuperAdminGuard } from './app.guard';
+
 import { SharedModule } from './shared/shared.module';
 
 import { SharedService } from './shared/shared.service';
@@ -32,6 +34,8 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     MessageService,
+    AppGuardService,
+    SuperAdminGuard,
     SharedService
   ],
   bootstrap: [AppComponent]

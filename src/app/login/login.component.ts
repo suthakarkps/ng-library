@@ -37,10 +37,16 @@ export class LoginComponent implements OnInit {
         };
         this._sharedService.getToken(this._sharedService.getValue('endpoint') + '/token', postData)
             .subscribe(response => {
-                console.log(response);
+                localStorage.clear();
+                this.loginForm.reset();
+                localStorage.setItem('expires_in', '"' + response.expires_in * 1000 + '"')
                 localStorage.setItem('token', response.access_token);
-                // this.getUserDetails();
-                this._router.navigate(['super-admin']);
+                this._sharedService.broadcastMessage({
+                    severity: 'success',
+                    summary: 'Login Successful',
+                    detail: 'You will be redirect to respective page'
+                });
+                this.getUserDetails();
             }, error => {
                 this.spinner = false;
                 this._sharedService.broadcastMessage({
@@ -54,14 +60,17 @@ export class LoginComponent implements OnInit {
     }
 
     getUserDetails() {
-        this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/SuperAdmin/GetLoginUser', {})
+        this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/Common/GetLoginUser', {})
             .subscribe(response => {
+                localStorage.setItem('username', response.UserName);
+                localStorage.setItem('userrole', response.UserRole);
+                this._router.navigate([localStorage.getItem('userrole')], { skipLocationChange: true });
+                this._sharedService.clearMessage();
                 this._sharedService.broadcastMessage({
                     severity: 'success',
-                    summary: 'Login Successful',
-                    detail: 'You will be redirect to respective page'
+                    summary: 'Welcome ' + localStorage.getItem('userrole'),
+                    detail: 'You have been logged in successfully'
                 });
-                this.loginForm.reset();
             }, error => {
                 this.spinner = false;
                 this._sharedService.broadcastMessage({
