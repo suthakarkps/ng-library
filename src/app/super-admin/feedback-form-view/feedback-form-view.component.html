@@ -1,0 +1,190 @@
+<div class="page-wrapper">
+  <h3 class="first">Welcome Corporate HQ</h3>
+  <p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar"
+           [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption">
+      FeedBack View
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th style="width: 50px">S.No</th>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th style="width: 150px">Status</th>
+        <th style="width: 150px">view</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-i="rowIndex">
+      <tr [pSelectableRow]="rowData">
+        <td>
+          {{i+1}}
+        </td>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+        <td style="width: 100px">
+          <i (click)="showDialogToComplete()" class="pi pi-check-circle" pTooltip="Completed" tooltipPosition="top"></i>
+        </td>
+        <td style="width: 100px">
+          <i (click)="showDialogToView()" class="pi pi-eye" pTooltip="View" tooltipPosition="top"></i>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+      <div>
+        No. of records: {{cars?.length}}
+      </div>
+    </ng-template>
+  </p-table>
+
+  <p-dialog header="Customer Feedback Form" [(visible)]="displayViewDialog" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-lg">
+    <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
+      <div class="ui-g-12">
+        <div class="ui-g-2">
+        </div>
+        <label for="divisionname">
+          You are the Valueable Customer for us.
+          Are you enjoying Good Support & service from SANEFORCE?
+        </label>
+      </div>
+
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="brand">Product Rating</label>
+        </div>
+
+        <div class="ui-g-9">
+          <div class="ui-g-12">
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 1" label="Good" [(ngModel)]="val1" inputId="opt1"></p-radioButton></div>
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 2" label="Average" [(ngModel)]="val1" inputId="opt2"></p-radioButton></div>
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 3" label="Poor" [(ngModel)]="val1" inputId="opt3"></p-radioButton></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="brand">Service Rating</label>
+        </div>
+        <div class="ui-g-9">
+          <div class="ui-g-12">
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 4" label="Good" [(ngModel)]="val1" inputId="opt1"></p-radioButton></div>
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 5" label="Average" [(ngModel)]="val1" inputId="opt2"></p-radioButton></div>
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 6" label="Poor" [(ngModel)]="val1" inputId="opt3"></p-radioButton></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="year">Area of Problem</label>
+        </div>
+        <div class="ui-g-9" style="width:295px;margin-bottom:10px">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="DivisionDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false" style="color:#0193de">
+                  Select Division
+                </a>
+                <div class="dropdown-menu DivisionDropdown" aria-labelledby="DivisionDropdown">
+                  <a class="dropdown-item" href="#">Nill</a>
+                  <a class="dropdown-item" href="#">Support at field level</a>
+                  <a class="dropdown-item" href="#">Support at Admin level</a>
+                  <a class="dropdown-item" href="#">New Module Implementation</a>
+                  <a class="dropdown-item" href="#">Exisiting Module Error</a>
+                  <a class="dropdown-item" href="#">Additional Report Requirement</a>
+                  <a class="dropdown-item" href="#">Training needed through Web</a>
+                  <a class="dropdown-item" href="#">IVR Related</a>
+                  <a class="dropdown-item" href="#">Others</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="brand">Contact Number</label>
+        </div>
+        <div class="ui-g-9">
+          <input class="form-control" placeholder="+91" id="brand" autocomplete="off" [(ngModel)]="car.brand" />
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="brand">Comments</label>
+        </div>
+        <div class="ui-g-9">
+          <input class="form-control" id="year" autocomplete="off" [(ngModel)]="car.year" />
+        </div>
+      </div>
+
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="brand">Would you recommend our Product?</label>
+        </div>
+        <div class="ui-g-9">
+          <div class="ui-g-12">
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 7" label="Yes" [(ngModel)]="val1" inputId="opt1"></p-radioButton></div>
+            <div class="ui-g-4"><p-radioButton name="group1" value="Option 8" label="No" [(ngModel)]="val1" inputId="opt2"></p-radioButton></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-3">
+          <label for="brand">Remarks</label>
+        </div>
+        <div class="ui-g-9">
+          <input class="form-control" id="divisionname" autocomplete="off" [(ngModel)]="car.divisionname" />
+        </div>
+      </div>
+
+    </div>
+
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="delete()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="save()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Submit
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+  <p-dialog [(visible)]=" displayCompletedDialog" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-sm">
+    <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
+      Do you want to complete the Division?
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="cancel()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="cancel()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Ok
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+
+
+
+
+</div>

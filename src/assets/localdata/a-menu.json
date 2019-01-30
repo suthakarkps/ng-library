@@ -1,0 +1,162 @@
+[
+  {
+    "iconName": "fa fa-table",
+    "name": "Dashboard",
+    "routeUrl": "admin/dashboard"
+  },
+  {
+    "iconName": "fa fa-table",
+    "name": "Division Management",
+    "routeUrl": "admin/division-management"
+  },
+  {
+    "iconName": "fa fa-table",
+    "name": "HO ID Mangement",
+    "routeUrl": "admin/ho-id-management"
+  },
+  {
+    "iconName": "fa fa-table",
+    "name": "Holiday List Mangement",
+    "routeUrl": "admin/holiday-list-management"
+  },
+  {
+    "iconName": "fa fa-table",
+    "name": "Menu Rights Mangement",
+    "routeUrl": "admin/menu-rights-management"
+  },
+  {
+    "iconName": "fa fa-table",
+    "name": "Input",
+    "routeUrl": "admin/admin-master-input"
+  },
+  {
+    "name": "Subdivision ",
+    "iconName": "fa fa-table",
+
+    "subMenu": [
+      {
+        "name": "Entry",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/subdivision-entry-management"
+      }
+    ]
+  },
+
+  {
+    "name": "Doctor",
+    "iconName": "fa fa-table",
+
+    "subMenu": [
+      {
+        "name": "Category",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-category"
+      },
+      {
+        "name": "Speciality",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-speciality"
+      },
+      {
+        "name": "Class",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-class"
+      },
+      {
+        "name": "Campaign",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-campaign"
+      },
+      {
+        "name": "Qualification",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-qualification"
+      },
+      {
+        "name": "Chemists Class",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-chemists-class"
+      },
+      {
+        "name": "Chemists Category",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-doctor-chemists-category"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "iconName": "fa fa-table",
+
+    "subMenu": [
+      {
+        "name": "Category",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-category"
+      },
+      {
+        "name": "Group",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-group"
+      },
+      {
+        "name": "Brand",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-brand"
+      },
+      {
+        "name": "Product Detail",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-product-detail"
+      },
+      {
+        "name": "Statewise Rate-Fixation",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-product-rate"
+      },
+      {
+        "name": "Prodcutwise Rate View",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-product-rate-view"
+      }
+    ]
+  },
+  {
+    "name": "Fieldforce Entries",
+    "iconName": "fa fa-table",
+
+    "subMenu": [
+      {
+        "name": "Territory",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-territory"
+      },
+      {
+        "name": "Territory- listed doctor",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-territory-listed-doctor"
+      },
+      {
+        "name": "Listed Doctor",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-listed-doctor"
+      },
+      {
+        "name": "Chemist",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-fieldforce-chemist"
+      },
+      {
+        "name": "Hospital",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-fieldforce-hospital"
+      },
+      {
+        "name": "Unlisted Doctor",
+        "iconName": "fa fa-table",
+        "routeUrl": "admin/admin-unlisted-doctor"
+      }
+    ]
+  }
+
+]

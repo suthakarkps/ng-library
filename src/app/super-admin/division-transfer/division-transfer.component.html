@@ -1,0 +1,58 @@
+
+<div class="page-wrapper">
+
+  <p-table [columns]="cols">
+    <ng-template pTemplate="caption">
+      Division Transfer
+    </ng-template>
+  </p-table>
+
+  <div class="ui-g-12 ui-fluid form-horizontal form-material">
+    <div class="ui-g-6 ui-fluid form-horizontal form-material">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="Shortname">From Division Name</label>
+        </div>
+        <div class="ui-g-8">
+          <p-dropdown [options]="cities1" [(ngModel)]="selectedCities1"></p-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-g-6 ui-fluid form-horizontal form-material">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="Shortname">To Division Name</label>
+        </div>
+        <div class="ui-g-8">
+          <p-dropdown [options]="cities2" [(ngModel)]="selectedCities2"></p-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-fluid form-horizontal form-material">
+    <div class="ui-g-6 ui-fluid form-horizontal form-material">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="Shortname">From Fieldforce Name</label>
+        </div>
+        <div class="ui-g-8">
+          <p-dropdown [options]="cities3" [(ngModel)]="selectedCities3"></p-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-g-6 ui-fluid form-horizontal form-material">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="Shortname">To Fieldforce Name</label>
+        </div>
+        <div class="ui-g-8">
+          <p-dropdown [options]="cities4" [(ngModel)]="selectedCities4"></p-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="button">Process</a>
+  <a href="#" class="button">Transfer</a>
+</div>

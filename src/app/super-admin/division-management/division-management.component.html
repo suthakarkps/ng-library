@@ -1,0 +1,290 @@
+<div class="page-wrapper">
+  <h3 class="first">Welcome Corporate HQ</h3>
+  <p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar"
+           [rows]="10">
+    <ng-template pTemplate="caption">
+      <button type="button" class="btn btn-primary btn-sm pull-right" (click)="showDialogToAddSlNoGeneration()">
+        <i class="fa fa-plus"></i>
+        Sl.No. Generation
+      </button>
+      <button type="button" class="btn btn-primary btn-sm pull-right" (click)="showDialogToAdd()">
+        <i class="fa fa-plus"></i>
+        Add
+      </button>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th style="width: 100px">S.No</th>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th style="width: 100px">Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-i="rowIndex">
+      <tr [pSelectableRow]="rowData">
+        <td>
+          {{i+1}}
+        </td>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+        <td style="width: 50px">
+          <i (click)="showDialogToAdd()" class="pi pi-pencil" pTooltip="Edit" tooltipPosition="top"></i>
+          <i (click)="showDialogToDeactivate()" class="pi pi-times" pTooltip="Deactivate" tooltipPosition="top"></i>
+          <i (click)="showDialogToStandby()" class="pi pi-lock" pTooltip="Standby" tooltipPosition="top"></i>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+      <div>
+        No. of records: {{cars?.length}}
+      </div>
+    </ng-template>
+  </p-table>
+
+
+  <p-dialog header="Division Creation List" [(visible)]="displayaddDialog" [width]="900" [minWidth]="600" [minY]="800" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-lg">
+    <div class="ui-g-12 ui-fluid form-horizontal form-material" *ngIf="car">
+      <div class="ui-g-6 ui-fluid form-horizontal form-material" *ngIf="car">
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Short Name</label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="For ID creation" id="divisionname" autocomplete="off" [(ngModel)]="car.shortname" />
+          </div>
+        </div>
+
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Address 1</label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="Chennai " id="aliasname" autocomplete="off" [(ngModel)]="car.aliasname" />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">City</label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="Chennai" id="city" autocomplete="off" [(ngModel)]="car.city" />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Year</label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="2018" id="year" autocomplete="off" [(ngModel)]="car.year" />
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-g-6 ui-fluid form-horizontal form-material" *ngIf="car">
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Division Name</label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="Medopharm cardiac" id="year" autocomplete="off" [(ngModel)]="car.divisionname" />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Address 2 </label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="Chennai" id="year" autocomplete="off" [(ngModel)]="car.address" />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Pin Code</label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="0000" id="year" autocomplete="off" [(ngModel)]="car.Pin" />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+            <label for="divisionmanagement">Alias Name </label>
+          </div>
+          <div class="ui-g-8">
+            <input class="form-control" placeholder="AlbDav" id="year" autocomplete="off" [(ngModel)]="car.Alias" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui-g-12">
+
+      <div><label>Select the State/Location </label></div>
+      <div class="selection">
+        <div class="ui-g-6" style="width:150px;margin-bottom:10px">
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Tamil Nadu" type="checkbox">
+            <label for="Tamil Nadu"> Tamil Nadu </label>
+          </div>
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Kerala" type="checkbox">
+            <label for="Kerala">Kerala </label>
+          </div>
+        </div>
+        <div class="ui-g-6" style="width:150px;margin-bottom:10px">
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Karnataka" type="checkbox">
+            <label for="Karnataka"> Karnataka </label>
+          </div>
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Telangana" type="checkbox">
+            <label for="Telangana"> Telangana </label>
+          </div>
+        </div>
+        <div class="ui-g-6" style="width:200px;margin-bottom:10px">
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Andhra Pradesh" type="checkbox">
+            <label for="Andhra Pradesh"> Andhra Pradesh </label>
+          </div>
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Uttar Pradesh" type="checkbox">
+            <label for="Uttar Pradesh"> Uttar Pradesh </label>
+          </div>
+        </div>
+        <div class="ui-g-6" style="width:200px;margin-bottom:10px">
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <input id="Delhi" type="checkbox">
+            <label for="Delhi"> Delhi </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="File">
+      <div class="fileupload">
+        <label textalign="centre" for="year"> Upload Logo </label>
+        <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
+      </div>
+    </div>
+
+
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="cancel()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="save()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Save
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+
+
+  <p-dialog header="Division Sl No Generation List" [(visible)]="displayaddslnogenerationDialog" [width]="1000" [minWidth]="600" [minY]="800" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-lg">
+    <div class="ui-g-12 ui-fluid form-horizontal form-material" *ngIf="car">
+      <p-table [columns]="colls" [value]="cars" selectionMode="single" [(selection)]="selectedCar"
+               [rows]="10">
+        <ng-template pTemplate="caption">
+          Divisionwise Serial.No Generation
+
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+              {{col.header}}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+            <th style="width: 200px">Existing S.No</th>
+            <th style="width: 100px">New S.No</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns" let-i="rowIndex">
+          <tr [pSelectableRow]="rowData">
+
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+            <td>
+              {{i+1}}
+            </td>
+            <td style="width: 10px">
+              <input class="form-control" id="divisionname" autocomplete="off" [(ngModel)]="car.divisionname" />
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div>
+            No. of records: {{cars?.length}}
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="clear()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Clear
+        </button>
+        <button type="button" (click)="generate()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Generate Sl No
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+
+
+
+
+  <p-dialog header="Deactivate" [(visible)]="displaydeactivatedialog" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-sm">
+    <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
+      Are you sure to deactivate?
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="cancel()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="deactivate()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Deactivate
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+
+  <p-dialog header="Standby" [(visible)]="displaystandbydialogue" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-sm">
+    <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
+      Are you sure to standby?
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="cancel()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="standby()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Standby
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+
+</div>

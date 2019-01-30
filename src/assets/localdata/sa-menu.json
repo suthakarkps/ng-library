@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Dashboard",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/dashboard"
+  },
+  {
+    "name": "Division Management",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/division-management"
+  },
+  {
+    "name": "HO ID Mangement",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/ho-id-management"
+  },
+  {
+    "name": "Menu Rights Mangement",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/menu-rights-management"
+  },
+  {
+    "name": "State/Location",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/state-location-management"
+  },
+  {
+    "name": "Division Transfer",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/division-transfer"
+  },
+  {
+    "name": "Feedback Form View",
+    "iconName": "fa fa-table",
+    "routeUrl": "super-admin/feedback-form-view"
+  }
+]

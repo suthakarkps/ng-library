@@ -1,7 +1,7 @@
 /*Sidebar*/
 .sidebar {
  width: 60px;
- background: #b51b3d;
+ background: #0193de;
  position: fixed;
  height: 100vh;
  z-index: 10002;
@@ -11,8 +11,8 @@
  width: 60px;
  height: 60px; 
  z-index: 10;
- background: #fab915;
- border-bottom: 1px solid #b51b3d;
+ background: #4ec5ff;
+ border-bottom: 1px solid #0193de;
 }
 .sidebar .sidebar-head h3 {
  color: #ffffff;
@@ -29,7 +29,7 @@
     overflow-x: auto;
     height: 100vh;
     margin: 0;
-    border-bottom: 3px solid #fab915;
+    border-bottom: 3px solid #4ec5ff;
 }
 .sideMenu li{
  width: 100%;
@@ -43,34 +43,34 @@
  text-align: center;  
 }
 .sideMenu > li > a {
-    background: #b51b3d;
+    background: #0193de;
 }
 .sideMenu li a::before{
     content: " ";
-    border: 2px solid #b51b3d;
-    left: -13px;
+    border: 2px solid #0193de;
+    left: -18px;
     position: relative;
     height: 36px;
-    background-color: #b51b3d;
+    background-color: #0193de;
     margin-top: -9px;
     display: block;
     float: left;
 }
-.sideMenu li a:hover{ 
- text-decoration: none;
- color: #fff;
- background-color: #9e223d
-}
-.sideMenu li a:hover::before{
-    border: 2px solid #9e223d;
-}
+  .sideMenu li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0183c5
+  }
+    .sideMenu li a:hover::before {
+      border: 2px solid #0183c5;
+    }
 .sideMenu li a.active {
  color: #fff;
- background-color: #fab915;
+ background-color: #4ec5ff;
 }
-.sideMenu li a.active::before{
-    border: 2px solid #fab915;
-}
+  .sideMenu li a.active::before {
+    border: 2px solid #4ec5ff;
+  }
 .sideMenu li a span{ display: none}
 .sideMenu li a span span {
  margin: 5px 0px 0 8px;
@@ -80,41 +80,41 @@
 .sideMenu li a b { 
  font-size: 14px
 }
-.sideMenu .label {
- font-size: 11px;
- border-radius: 60px;
- padding: 4px 8px;
- min-width: 30px;
- height: 16px;
- line-height: 7px;
- text-align: center;
- margin-top: 2px !important;
- background-color: #ea3b61;
- color: white;
-}
-.sideMenu > li a.expand{
-    background: #be3654;
-}
-.sideMenu li a.expand::before{
- border: 2px solid #be3654
-}
-.sideMenu li a.expand .label{
-    background-color:#fab915;
-}
+  .sideMenu .label {
+    font-size: 11px;
+    border-radius: 60px !important;
+    padding: 4px 8px;
+    min-width: 30px;
+    height: 16px;
+    line-height: 7px;
+    text-align: center;
+    margin-top: 2px !important;
+    background-color: #4ec5ff;
+    color: white;
+  }
+  .sideMenu > li a.expand {
+    background: #4ec5ff;
+  }
+  .sideMenu li a.expand::before {
+    border: 2px solid #00129a
+  }
+  .sideMenu li a.expand .label {
+    background-color: #00129a;
+  }
 .sideMenu li a.expand span span.fa-chevron-right:before{
     content: "\f078";
-    color: #fab915;
+    color: #fff;
 }
-.sideMenu li a.selected::before{    
-    border: 2px solid #fab915;    
-} 
-.sideMenu > li a.expand+.subMenu, 
-.sideMenu > li a.expand+.addMenu{    
-    background: #be3654;
+  .sideMenu li a.selected::before {
+    border: 2px solid #00129a;
+  }
+  .sideMenu > li a.expand + .subMenu,
+  .sideMenu > li a.expand + .addMenu {
+    background: #0193de;
     height: auto;
     overflow: hidden;
     transition: height 1s;
-}
+  }
 .sideMenu li a+.subMenu, 
 .sideMenu li a+.addMenu{ 
     height: 0;
@@ -122,19 +122,18 @@
 }
 
 /*Submenu*/
-.sideMenu li li a::before{
-    left:-31px;
-    border: 2px solid #be3654;
-}
-.sideMenu li li a:hover::before{    
-    border: 2px solid #9e223d;
-}
-.sideMenu li li a.active::before{    
-    border: 2px solid #fab915;
-}
-.sideMenu li li a.expand:hover::before{
-    border: 2px solid #be3654;
-}
+  .sideMenu li li a::before {
+    left: -31px;
+  }
+  .sideMenu li li a:hover::before {
+    border: 2px solid #0183c5;
+  }
+  .sideMenu li li a.active::before {
+    border: 2px solid #4ec5ff;
+  }
+  .sideMenu li li a.expand:hover::before {
+    border: 2px solid #0183c5;
+  }
 
 /*Sidebar Expanded*/
 .sidebar.expanded {

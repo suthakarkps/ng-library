@@ -1,0 +1,98 @@
+<div class="page-wrapper">
+  <h3 class="first">Welcome Corporate HQ</h3>
+  <p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar"
+           [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption">
+      State-Location
+      <button type="button" class="btn btn-primary btn-sm pull-right" (click)="showDialogToAdd()">
+        <i class="fa fa-plus"></i>
+        Add
+      </button>
+
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th style="width: 50px">S.No</th>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th style="width: 100px">Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-i="rowIndex">
+      <tr [pSelectableRow]="rowData">
+        <td>
+          {{i+1}}
+        </td>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+        <td style="width: 100px">
+          <i (click)="showDialogToAdd()" class="pi pi-pencil" pTooltip="Edit" tooltipPosition="top"></i>
+          <i (click)="showDialogToDeactivate()" class="pi pi-times" pTooltip="Deactivate" tooltipPosition="top"></i>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+      <div>
+        No. of records: {{cars?.length}}
+      </div>
+    </ng-template>
+  </p-table>
+
+  <p-dialog header="State-Location" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-sm">
+    <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="divisionname">Short Name</label>
+        </div>
+        <div class="ui-g-8">
+          <input class="form-control" placeholder="Short Name" id="divisionname" autocomplete="off" [(ngModel)]="car.divisionname" />
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="brand">State Name</label>
+        </div>
+        <div class="ui-g-8">
+          <input class="form-control" placeholder="State Name" id="brand" autocomplete="off" [(ngModel)]="car.brand" />
+        </div>
+      </div> 
+    </div>
+
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="delete()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="save()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Save
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+  <p-dialog header="HO ID Management" [(visible)]="displayDialogue" [responsive]="true" showEffect="fade" [modal]="true"
+            class="ui-dialog ui-dialog-sm">
+    <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
+      Are you sure to deactivate?
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" (click)="cancel()" class="btn btn-outline">
+          <i class="fa fa-close"></i>
+          Cancel
+        </button>
+        <button type="button" (click)="deactivate()" class="btn btn-default">
+          <i class="fa fa-check"></i>
+          Deactivate
+        </button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+</div>

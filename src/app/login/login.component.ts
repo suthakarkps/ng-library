@@ -38,8 +38,9 @@ export class LoginComponent implements OnInit {
         this._sharedService.getToken(this._sharedService.getValue('endpoint') + '/token', postData)
             .subscribe(response => {
                 console.log(response);
-                localStorage.setItem("token", response.access_token)                
-                this.getUserDetails();
+                localStorage.setItem('token', response.access_token);
+                // this.getUserDetails();
+                this._router.navigate(['super-admin']);
             }, error => {
                 this.spinner = false;
                 this._sharedService.broadcastMessage({
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
                 });
                 this.loginForm.reset();
             });
-        // this._router.navigate(['admin']);
+
     }
 
     getUserDetails() {

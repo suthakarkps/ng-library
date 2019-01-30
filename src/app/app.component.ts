@@ -13,13 +13,14 @@ export class AppComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private _sharedService: SharedService) { 
+    private _sharedService: SharedService) {
       this._sharedService.observedMessage$.subscribe(msg => {
-        this.messageService.add(msg); 
+        this.messageService.add(msg);
       });
     }
 
   ngOnInit() {
     this._sharedService.setValue('endpoint', Config.environment['endpoint']);
+    this._sharedService.setValue('local', Config.environment['local']);
   }
 }
