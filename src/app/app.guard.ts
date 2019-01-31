@@ -15,7 +15,7 @@ export class SuperAdminGuard implements CanActivate {
         private _router: Router
     ) { }
     canActivate() {
-        const isExpired = '';
+        const isExpired = true;
         if (isExpired && localStorage.getItem("userrole") == "super-admin") {
             return true;
         }

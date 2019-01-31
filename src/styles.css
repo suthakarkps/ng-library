@@ -18,7 +18,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #b51b3d;
+    color: #019eee;
     margin: 10px 0;
     font-weight: 300
 }
@@ -349,10 +349,10 @@ hr {
 }
 
 .form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#b51b3d), to(#b51b3d)), -webkit-gradient(linear, left top, left bottom, from(rgba(120, 130, 140, 0.13)), to(rgba(120, 130, 140, 0.13)));
-    background-image: -webkit-linear-gradient(#b51b3d, #b51b3d), -webkit-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
-    background-image: -o-linear-gradient(#b51b3d, #b51b3d), -o-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
-    background-image: linear-gradient(#b51b3d, #b51b3d), linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#019eee), to(#019eee)), -webkit-gradient(linear, left top, left bottom, from(rgba(120, 130, 140, 0.13)), to(rgba(120, 130, 140, 0.13)));
+    background-image: -webkit-linear-gradient(#019eee, #019eee), -webkit-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+    background-image: -o-linear-gradient(#019eee, #019eee), -o-linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+    background-image: linear-gradient(#019eee, #019eee), linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
     border: 0 none;
     border-radius: 0;
     -webkit-box-shadow: none;
@@ -453,8 +453,8 @@ hr {
 }
 
 .checkbox-primary input[type=checkbox]:checked+label:before {
-    background-color: #b51b3d;
-    border-color: #b51b3d
+    background-color: #019eee;
+    border-color: #019eee
 }
 
 .checkbox-primary input[type=checkbox]:checked+label:after {
@@ -548,68 +548,68 @@ hr {
 }
 
 .radio-primary input[type=radio]+label:after {
-    background-color: #b51b3d
+    background-color: #019eee
 }
 
 /*********************BUTTON*************************/
 
 .btn-default {
-    background: #b51b3d;
-    border: 1px solid #b51b3d;
+    background: #019eee;
+    border: 1px solid #019eee;
     color: #fff;
 }
 
 .btn-default.focus, .btn-default:focus, .btn-default:hover {
     opacity: 0.8;
-    border: 1px solid #2f4aff;
-    background: #2f4aff;
+    border: 1px solid #009ae8;
+    background: #009ae8;
 }
 
 .btn-default.disabled {
     opacity: 0.5;
-    background: #b51b3d;
-    border: 1px solid #b51b3d;
+    background: #019eee;
+    border: 1px solid #019eee;
     color: #fff;
 }
 
 .btn-default.disabled.focus, .btn-default.disabled:focus, .btn-default.disabled:hover {
     opacity: 0.5;
-    border: 1px solid #b51b3d;
-    background: #b51b3d
+    border: 1px solid #019eee;
+    background: #019eee
 }
 
 .btn-outline, .btn-outline.disabled {
     background: #fff;
-    border: 1px solid #b51b3d;
+    border: 1px solid #019eee;
     color: #333;
 }
 
 .btn-outline.disabled.focus, .btn-outline.disabled:focus, .btn-outline.disabled:hover, .btn-outline.focus, .btn-outline:focus, .btn-outline:hover {
     opacity: 1;
-    border: 1px solid #b51b3d;
+    border: 1px solid #019eee;
     background: #fff;
-    color: #b51b3d;
+    color: #019eee;
     box-shadow: 0 0 0 0 !important;
 }
 
 .btn-primary, .btn-primary.disabled {
-    background: #fab915;
-    border: 1px solid #fab915;
+    background: #fdb414;
+    border: 1px solid #fdb414;
     color: #fff;
 }
 
 .btn-primary.disabled.focus, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
     opacity: 0.8;
     color: #fff;
-    border: 1px solid #fab915;
-    background: #fab915;
+    border: 1px solid #fdb414;
+    background: #fdb414;
     box-shadow: 0 0 0 0 !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #fab915;
-    border-color: #fab915;
+    background-color: #fdb414;
+    border-color: #fdb414;
     box-shadow: 0 0 0 0 !important;
 }
 
@@ -629,7 +629,7 @@ hr {
 }
 
 .theme-box {
-    background: #b51b3d;
+    background: #019eee;
     color: #fff;
     padding: 25px;
     margin-bottom: 30px;
@@ -644,7 +644,7 @@ hr {
 }
 
 .highlight-box {
-    background: #fab915;
+    background: #fdb414;
     color: #fff;
     padding: 25px;
     margin-bottom: 30px;
@@ -895,13 +895,13 @@ hr {
 }
 
 .panel-theme, .panel-themecolor {
-    border-color: #b51b3d
+    border-color: #019eee
 }
 
 .panel-theme .panel-heading, .panel-themecolor .panel-heading {
-    border-color: #b51b3d;
+    border-color: #019eee;
     color: white;
-    background-color: #b51b3d
+    background-color: #019eee
 }
 
 .panel-theme .panel-heading a, .panel-themecolor .panel-heading a {
@@ -913,7 +913,7 @@ hr {
 }
 
 .panel-theme a, .panel-themecolor a {
-    color: #b51b3d
+    color: #019eee
 }
 
 .panel-theme a:hover, .panel-themecolor a:hover {
@@ -953,13 +953,13 @@ hr {
 /****************************HighCharts*********************************/
 
 .highcharts-menu-item:hover {
-    background-color: #b51b3d !important;
+    background-color: #019eee !important;
 }
 
 /********************PRIME NG GRID************************/
 
 body .ui-table .ui-table-caption, body .ui-table .ui-table-summary {
-    background-color: #b51b3d;
+    background-color: #019eee;
     color: #fff;
     border: 0px none;
     padding: 0.5em 1em;
@@ -976,12 +976,12 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
 }
 
 body .ui-table .ui-sortable-column.ui-state-highlight {
-    background-color: #fab915;
+    background-color: #fdb414;
     color: #ffffff;
 }
 
 body .ui-table .ui-sortable-column:not(.ui-state-highlight):hover {
-    background-color: #fab915;
+    background-color: #fdb414;
     color: #ffffff;
 }
 
@@ -993,7 +993,7 @@ body .ui-table .ui-table-thead>tr>th {
     padding: 0.5em 0.8em;
     border: 0px none;
     color: #ffffff;
-    background-color: #b51b3d;
+    background-color: #019eee;
 }
 
 body .ui-table .ui-table-tbody>tr:nth-child(even) {
@@ -1020,24 +1020,24 @@ body .ui-paginator .ui-paginator-pages .ui-paginator-page {
 }
 
 body .ui-paginator .ui-paginator-first, body .ui-paginator .ui-paginator-prev, body .ui-paginator .ui-paginator-next, body .ui-paginator .ui-paginator-last {
-    color: #b51b3d;
+    color: #019eee;
 }
 
 body .ui-paginator .ui-paginator-pages .ui-paginator-page:not(.ui-state-active):hover {
-    background-color: #b51b3d;
+    background-color: #019eee;
     color: #ffffff;
     opacity: 0.8;
 }
 
 body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
-    background-color: #b51b3d;
+    background-color: #019eee;
     color: #ffffff;
 }
 
 body .ui-paginator .ui-paginator-first:not(.ui-state-disabled):not(.ui-state-active):hover, body .ui-paginator .ui-paginator-prev:not(.ui-state-disabled):not(.ui-state-active):hover, body .ui-paginator .ui-paginator-next:not(.ui-state-disabled):not(.ui-state-active):hover, body .ui-paginator .ui-paginator-last:not(.ui-state-disabled):not(.ui-state-active):hover {
     opacity: 0.8;
     color: #fff;
-    background-color: #b51b3d;
+    background-color: #019eee;
 }
 
 /**********************************UI DIALOG & OVERLAY***********************************/
@@ -1069,7 +1069,7 @@ body .ui-dialog-lg>.ui-dialog {
 
 body .ui-dialog .ui-dialog-titlebar {
     border: 0px none;
-    background-color: #b51b3d;
+    background-color: #019eee;
     color: #ffffff;
 }
 
@@ -1083,7 +1083,7 @@ body .ui-dialog .ui-dialog-content {
 
 body .ui-dialog .ui-dialog-footer {
     border: 0px none;
-    border-top: 1px solid #fab915;
+    border-top: 1px solid #fdb414;
 }
 
 

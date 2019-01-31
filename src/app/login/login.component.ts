@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        localStorage.clear();
         this.loginForm = this._formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
@@ -37,9 +38,10 @@ export class LoginComponent implements OnInit {
         };
         this._sharedService.getToken(this._sharedService.getValue('endpoint') + '/token', postData)
             .subscribe(response => {
-                localStorage.clear();
+                let currentTime = new Date();
                 this.loginForm.reset();
-                localStorage.setItem('expires_in', '"' + response.expires_in * 1000 + '"')
+                localStorage.setItem('expires_in', JSON.stringify(currentTime.getTime() + response.expires_in * 1000))
+                // localStorage.setItem('expires_in',  currentTime.getTime() + response.expires_in )
                 localStorage.setItem('token', response.access_token);
                 this._sharedService.broadcastMessage({
                     severity: 'success',
@@ -62,6 +64,7 @@ export class LoginComponent implements OnInit {
     getUserDetails() {
         this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/Common/GetLoginUser', {})
             .subscribe(response => {
+                this.spinner = false;
                 localStorage.setItem('username', response.UserName);
                 localStorage.setItem('userrole', response.UserRole);
                 this._router.navigate([localStorage.getItem('userrole')], { skipLocationChange: true });

@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     path: 'admin', loadChildren: () => AdminModule
   },
   {
-    path: '', component: LoginComponent
+    path: 'login', component: LoginComponent
   }
 ];
 

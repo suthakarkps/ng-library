@@ -25,10 +25,10 @@ export class SidebarNavComponent implements OnInit {
   }
 
   getNavItems() {
-    // this._sharedService.get(this._sharedService.getValue('local') + '/sa-menu.json')
+    // this._sharedService.get(this._sharedService.getValue('local') + '/a-menu.json')
     this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/Common/GetUserMenuDetails', {})
       .subscribe(response => {
-        this.nav = response;
+        this.nav = response;        
       }, error => {
 
       });

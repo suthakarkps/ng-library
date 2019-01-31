@@ -11,8 +11,9 @@
             <li *ngFor="let item of nav; let i = index">
                 <a [class.active]="i==0" href="javascript:void(0);" (click)="sideMenuClick($event, item?.routeUrl, item?.subMenu?.length, 'menu')">
                     <i *ngIf="item.IconName; else noIcon" [class]="item.IconName"></i>
+                    <!-- <i *ngIf="item.IconName; else noIcon" class="fa fa-calendar"></i> -->
                     <ng-template #noIcon>
-                        <b class="noIcon">P</b>
+                        <b class="noIcon">{{(item.MenuDescription | slice:0:1)}}</b>
                     </ng-template>
                     <span class="">
                         {{item.MenuDescription}}

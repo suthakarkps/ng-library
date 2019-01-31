@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { MessageService } from 'primeng/api';
 
 import * as Config from '../environments/environment';
 import { SharedService } from './shared/shared.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,19 +13,25 @@ import { SharedService } from './shared/shared.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  dt:any = new Date();  
 
-constructor(
-  private messageService: MessageService,
-  private _sharedService: SharedService) {
-  this._sharedService.observedMessage$.subscribe(msg => {
-    this.messageService.add(msg);
-  });
-}
+  constructor(
+    private _router: Router,
+    private messageService: MessageService,
+    private _sharedService: SharedService) {
+    this._sharedService.observedMessage$.subscribe(msg => {
+      this.messageService.add(msg);
+    });
+  }
 
-ngOnInit() {
-  this.dt.setSeconds(this.dt.getSeconds() + 3599);
-  this._sharedService.setValue('endpoint', Config.environment['endpoint']);
-  this._sharedService.setValue('local', Config.environment['local']);
-}
+  ngOnInit() {
+    let currentTime = new Date();
+    if (JSON.parse(localStorage.getItem('expires_in')) > currentTime.getTime()) {
+      this._router.navigate([localStorage.getItem('userrole')], { skipLocationChange: true });
+    } else {
+      this._router.navigate(['./login'], { skipLocationChange: true });
+    }
+
+    this._sharedService.setValue('endpoint', Config.environment['endpoint']);
+    this._sharedService.setValue('local', Config.environment['local']);
+  }
 }
