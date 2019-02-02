@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../shared.service'
+import { SharedService } from '../shared.service';
 declare var $;
 
 @Component({
@@ -28,7 +28,7 @@ export class SidebarNavComponent implements OnInit {
     // this._sharedService.get(this._sharedService.getValue('local') + '/a-menu.json')
     this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/Common/GetUserMenuDetails', {})
       .subscribe(response => {
-        this.nav = response;        
+        this.nav = response;
       }, error => {
 
       });

@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
         };
         this._sharedService.getToken(this._sharedService.getValue('endpoint') + '/token', postData)
             .subscribe(response => {
-                let currentTime = new Date();
+                const currentTime = new Date();
                 this.loginForm.reset();
-                localStorage.setItem('expires_in', JSON.stringify(currentTime.getTime() + response.expires_in * 1000))
+                localStorage.setItem('expires_in', JSON.stringify(currentTime.getTime() + response.expires_in * 1000));
                 // localStorage.setItem('expires_in',  currentTime.getTime() + response.expires_in )
                 localStorage.setItem('token', response.access_token);
                 this._sharedService.broadcastMessage({

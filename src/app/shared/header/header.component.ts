@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent {
     constructor(
-        private _router: Router        
+        private _router: Router
       ) { }
 
     logout(){
         localStorage.clear();
-        this._router.navigate(['/']);
+        this._router.navigate(['/login']);
     }
 }
