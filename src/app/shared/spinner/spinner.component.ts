@@ -1,4 +1,4 @@
-import { Component,OnChanges,Input} from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'spinner',
@@ -12,10 +12,10 @@ export class SpinnerComponent implements OnChanges {
   @Input() size;
   @Input() overlay;
   ngOnChanges(changes) {
-    if (changes.size.currentValue != undefined) {
-      this.Width = this.size + "px";
-      this.Height = this.size + "px";
+    if (changes.size.currentValue !== undefined) {
+      this.Width = this.size + 'px';
+      this.Height = this.size + 'px';
     }
   }
-  
+
 }

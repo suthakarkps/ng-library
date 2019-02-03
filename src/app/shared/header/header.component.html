@@ -6,42 +6,33 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <div class="nav-item dropdown pull-right">
-                <a class="nav-link dropdown-toggle" href="#" id="userProfileDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu userProfileDropdown" aria-labelledby="userProfileDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" (click)="logout()">Logout</a>
-                </div>
-            </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+      <div class="nav-item dropdown pull-right">
+        <a class="nav-link dropdown-toggle" href="#" id="DivisionDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false" style="color:#276d90">
+          Select Division
+        </a>
+        <div class="dropdown-menu DivisionDropdown" aria-labelledby="DivisionDropdown">
+          <a class="dropdown-item" href="#">Medopharma - Radiant</a>
+          <a class="dropdown-item" href="#">MedoPharma-Vibrant(OTC)division</a>
+          <a class="dropdown-item" href="#">Medopharm - Jubilant</a>
+          <a class="dropdown-item" href="#">Medopharm - Orient</a>
+          <a class="dropdown-item" href="#">MedoPharm-Cardiac</a>
         </div>
-    </nav>
+      </div>
+      <div class="nav-item dropdown pull-right">
+        <a class="nav-link dropdown-toggle" href="#" id="userProfileDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu userProfileDropdown" aria-labelledby="userProfileDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+           <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </div>

@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
                 const currentTime = new Date();
                 this.loginForm.reset();
                 localStorage.setItem('expires_in', JSON.stringify(currentTime.getTime() + response.expires_in * 1000));
-                // localStorage.setItem('expires_in',  currentTime.getTime() + response.expires_in )
                 localStorage.setItem('token', response.access_token);
                 this._sharedService.broadcastMessage({
                     severity: 'success',
@@ -79,7 +78,7 @@ export class LoginComponent implements OnInit {
                 this._sharedService.broadcastMessage({
                     severity: 'error',
                     summary: 'Login Failure',
-                    detail: 'Invalid Username or Password'
+                    detail: 'Unable to login'
                 });
                 this.loginForm.reset();
             });

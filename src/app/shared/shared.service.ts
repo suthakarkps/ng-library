@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Injectable()
 
@@ -74,10 +74,10 @@ export class SharedService {
   /**********************Primeng Message**************************/
 
   broadcastMessage(msg) {
-    this.message.next(msg)
+    this.message.next(msg);
   }
 
-  clearMessage(){
+  clearMessage() {
     this._messageService.clear();
   }
 
@@ -107,8 +107,8 @@ export class SharedService {
   get(url: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': "Bearer "+localStorage.getItem("token")
-    });    
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    });
     const options = { headers: headers };
     return this._http.get(url, options)
       .pipe(
@@ -121,8 +121,8 @@ export class SharedService {
   post(url: string, data): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer '+localStorage.getItem('token')
-    });        
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    });
     const options = { headers: headers };
     const body = data;
 
@@ -137,7 +137,7 @@ export class SharedService {
   postFile(url, file): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer '+localStorage.getItem('token')
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
     });
     const options = { headers: headers };
     const formData: FormData = new FormData();

@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Router, CanActivate } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
 
 @Injectable()
 export class AppGuardService {
@@ -16,10 +16,9 @@ export class SuperAdminGuard implements CanActivate {
     ) { }
     canActivate() {
         const isExpired = true;
-        if (isExpired && localStorage.getItem("userrole") == "super-admin") {
+        if (isExpired && localStorage.getItem('userrole') === 'super-admin') {
             return true;
-        }
-        else {
+        } else {
             this._router.navigate(['/'], { skipLocationChange: true });
         }
     }

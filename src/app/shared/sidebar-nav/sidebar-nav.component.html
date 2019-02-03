@@ -7,7 +7,7 @@
                 <i class="fa open fa-bars"></i>
             </h3>
         </div>
-        <ul class="nav in" class="sideMenu">
+        <ul class="nav in sideMenu">
             <li *ngFor="let item of nav; let i = index">
                 <a [class.active]="i==0" href="javascript:void(0);" (click)="sideMenuClick($event, item?.routeUrl, item?.subMenu?.length, 'menu')">
                     <i *ngIf="item.IconName; else noIcon" [class]="item.IconName"></i>

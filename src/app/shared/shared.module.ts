@@ -19,4 +19,5 @@ import { SidebarNavComponent } from '../shared/sidebar-nav/sidebar-nav.component
     SidebarNavComponent
   ]
 })
+
 export class SharedModule { }

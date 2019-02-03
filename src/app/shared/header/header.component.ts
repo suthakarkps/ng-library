@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
     constructor(
         private _router: Router
-      ) { }
+    ) { }
 
-    logout(){
+    logout() {
         localStorage.clear();
-        this._router.navigate(['/login']);
+        this._router.navigate(['/login'], { skipLocationChange: true });
     }
 }

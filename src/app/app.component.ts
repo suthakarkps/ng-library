@@ -24,14 +24,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    let currentTime = new Date();
-    if (JSON.parse(localStorage.getItem('expires_in')) > currentTime.getTime()) {
+    this._sharedService.setValue('endpoint', Config.environment['endpoint']);
+    // this._sharedService.setValue('local', Config.environment['local']);
+
+    const currentTime = new Date();
+    if (localStorage.getItem('userrole') && JSON.parse(localStorage.getItem('expires_in')) > currentTime.getTime()) {
       this._router.navigate([localStorage.getItem('userrole')], { skipLocationChange: true });
     } else {
       this._router.navigate(['./login'], { skipLocationChange: true });
     }
-
-    this._sharedService.setValue('endpoint', Config.environment['endpoint']);
-    this._sharedService.setValue('local', Config.environment['local']);
   }
 }
