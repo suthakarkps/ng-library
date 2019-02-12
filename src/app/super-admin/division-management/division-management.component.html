@@ -1,13 +1,12 @@
 <div class="page-wrapper">
   <h3 class="first">Welcome Corporate HQ</h3>
-  <p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar"
-           [rows]="10">
+  <p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar" [rows]="10">
     <ng-template pTemplate="caption">
-      <button type="button" class="btn btn-primary btn-sm pull-right" (click)="showDialogToAddSlNoGeneration()">
+      <button type="button" class="btn btn-default btn-sm pull-right" (click)="showDialogToAddSlNoGeneration()">
         <i class="fa fa-plus"></i>
         Sl.No. Generation
       </button>
-      <button type="button" class="btn btn-primary btn-sm pull-right" (click)="showDialogToAdd()">
+      <button type="button" class="btn btn-default btn-sm pull-right" (click)="showDialogToAdd()">
         <i class="fa fa-plus"></i>
         Add
       </button>
@@ -19,7 +18,7 @@
           {{col.header}}
           <p-sortIcon [field]="col.field"></p-sortIcon>
         </th>
-        <th style="width: 100px">Action</th>
+        <th style="width: 100px" class="text-center">Action</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns" let-i="rowIndex">
@@ -30,10 +29,10 @@
         <td *ngFor="let col of columns">
           {{rowData[col.field]}}
         </td>
-        <td style="width: 50px">
-          <i (click)="showDialogToAdd()" class="pi pi-pencil" pTooltip="Edit" tooltipPosition="top"></i>
-          <i (click)="showDialogToDeactivate()" class="pi pi-times" pTooltip="Deactivate" tooltipPosition="top"></i>
-          <i (click)="showDialogToStandby()" class="pi pi-lock" pTooltip="Standby" tooltipPosition="top"></i>
+        <td style="width: 50px" class="text-center">
+          <i (click)="showDialogToAdd()" class="action pi pi-pencil" pTooltip="Edit" tooltipPosition="top"></i>
+          <i (click)="showDialogToDeactivate()" class="action pi pi-times" pTooltip="Deactivate" tooltipPosition="top"></i>
+          <i (click)="showDialogToStandby()" class="action pi pi-power-off" pTooltip="Standby" tooltipPosition="top"></i>
         </td>
       </tr>
     </ng-template>
@@ -45,8 +44,8 @@
   </p-table>
 
 
-  <p-dialog header="Division Creation List" [(visible)]="displayaddDialog" [width]="900" [minWidth]="600" [minY]="800" [responsive]="true" showEffect="fade" [modal]="true"
-            class="ui-dialog ui-dialog-lg">
+  <p-dialog header="Division Creation List" [(visible)]="displayaddDialog" [width]="900" [minWidth]="600" [minY]="800"
+    [responsive]="true" showEffect="fade" [modal]="true" class="ui-dialog ui-dialog-lg">
     <div class="ui-g-12 ui-fluid form-horizontal form-material" *ngIf="car">
       <div class="ui-g-6 ui-fluid form-horizontal form-material" *ngIf="car">
         <div class="ui-g-12">
@@ -187,11 +186,10 @@
 
 
 
-  <p-dialog header="Division Sl No Generation List" [(visible)]="displayaddslnogenerationDialog" [width]="1000" [minWidth]="600" [minY]="800" [responsive]="true" showEffect="fade" [modal]="true"
-            class="ui-dialog ui-dialog-lg">
+  <p-dialog header="Division Sl No Generation List" [(visible)]="displayaddslnogenerationDialog" [width]="1000"
+    [minWidth]="600" [minY]="800" [responsive]="true" showEffect="fade" [modal]="true" class="ui-dialog ui-dialog-lg">
     <div class="ui-g-12 ui-fluid form-horizontal form-material" *ngIf="car">
-      <p-table [columns]="colls" [value]="cars" selectionMode="single" [(selection)]="selectedCar"
-               [rows]="10">
+      <p-table [columns]="colls" [value]="cars" selectionMode="single" [(selection)]="selectedCar" [rows]="10">
         <ng-template pTemplate="caption">
           Divisionwise Serial.No Generation
 
@@ -248,7 +246,7 @@
 
 
   <p-dialog header="Deactivate" [(visible)]="displaydeactivatedialog" [responsive]="true" showEffect="fade" [modal]="true"
-            class="ui-dialog ui-dialog-sm">
+    class="ui-dialog ui-dialog-sm">
     <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
       Are you sure to deactivate?
     </div>
@@ -268,7 +266,7 @@
 
 
   <p-dialog header="Standby" [(visible)]="displaystandbydialogue" [responsive]="true" showEffect="fade" [modal]="true"
-            class="ui-dialog ui-dialog-sm">
+    class="ui-dialog ui-dialog-sm">
     <div class="ui-g ui-fluid form-horizontal form-material" *ngIf="car">
       Are you sure to standby?
     </div>

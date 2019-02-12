@@ -26,7 +26,7 @@ export class SidebarNavComponent implements OnInit {
 
   getNavItems() {
     // this._sharedService.get(this._sharedService.getValue('local') + '/a-menu.json')
-    this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/Common/GetUserMenuDetails', {})
+    this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/GetMenuDetails', {})
       .subscribe(response => {
         this.nav = response;
       }, error => {
@@ -42,6 +42,7 @@ export class SidebarNavComponent implements OnInit {
   }
 
   sideMenuClick(event, routeUrl, subMenuCount, from) {
+    this._router.navigate(['/super-admin/division-management']);
     if (routeUrl) {
       this._router.navigate([routeUrl]);
     }

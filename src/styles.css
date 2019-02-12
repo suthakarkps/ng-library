@@ -329,6 +329,12 @@ hr {
     margin-bottom: 25px
 }
 
+.form-horizontal.form-material label {
+    height: 2rem;
+    line-height: 2.3rem;
+    margin-bottom: 0;
+}
+
 .form-group {
     margin-bottom: 25px
 }
@@ -345,7 +351,8 @@ hr {
     padding: 0;
     -webkit-transition: background 0s ease-out 0s;
     -o-transition: background 0s ease-out 0s;
-    transition: background 0s ease-out 0s
+    transition: background 0s ease-out 0s;
+    font-size: 0.9rem;
 }
 
 .form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus {
@@ -959,11 +966,12 @@ hr {
 /********************PRIME NG GRID************************/
 
 body .ui-table .ui-table-caption, body .ui-table .ui-table-summary {
-    background-color: #019eee;
-    color: #fff;
+    background-color: #b8e7ff;
+    color: #333;
     border: 0px none;
-    padding: 0.5em 1em;
-    height: 38px;
+    padding: 0.3em;
+    height: 36px;
+    line-height: 25px;
     border-bottom: 1px solid #fff;
 }
 
@@ -971,17 +979,21 @@ body .ui-table .ui-table-summary {
     border-top: 1px solid #fff;
 }
 
+.ui-table-caption .btn {
+    margin-left: 0.3em
+}
+
 body .ui-table .ui-sortable-column .ui-sortable-column-icon {
-    color: #ffffff;
+    color: #019eee;
 }
 
 body .ui-table .ui-sortable-column.ui-state-highlight {
-    background-color: #fdb414;
+    background-color: #019eee;
     color: #ffffff;
 }
 
 body .ui-table .ui-sortable-column:not(.ui-state-highlight):hover {
-    background-color: #fdb414;
+    background-color: #019eee;
     color: #ffffff;
 }
 
@@ -992,27 +1004,45 @@ body .ui-table .ui-sortable-column:not(.ui-state-highlight):hover .ui-sortable-c
 body .ui-table .ui-table-thead>tr>th {
     padding: 0.5em 0.8em;
     border: 0px none;
-    color: #ffffff;
-    background-color: #019eee;
+    color: #019eee;
+    border: 1px solid #eee;
+    background-color: #fff;
 }
 
 body .ui-table .ui-table-tbody>tr:nth-child(even) {
-    background-color: #ffe9ee;
+    background-color: #f5f5f5;
+}
+
+body .ui-table .ui-table-tbody>tr.ui-state-highlight {
+    background-color: #fff;
+    color: #333;
+}
+
+body .ui-table .ui-table-tbody>tr:nth-child(even).ui-state-highlight {
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 body .ui-table.ui-table-hoverable-rows .ui-table-tbody>tr.ui-selectable-row:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
-    background-color: #ffb4c5;
+    background-color: transparent;
+    cursor: default;
+}
+
+body .ui-table.ui-table-hoverable-rows .ui-table-tbody>tr.ui-selectable-row:nth-child(even):not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+    background-color: #f5f5f5;
+    cursor: default;
 }
 
 body .ui-table .ui-table-tbody>tr>td {
-    border: 0px none;
+    border: 1px solid #eee;
+    padding: 0.3em;
 }
 
 body .ui-paginator {
-    background-color: #ffb4c5;
-    border: 0px none;
+    border-top: 0px none;
     padding: 0;
-    border-top: 1px solid #fff !important;
+    border: 1px solid #eee;
+    background: #fff;
 }
 
 body .ui-paginator .ui-paginator-pages .ui-paginator-page {
@@ -1038,6 +1068,29 @@ body .ui-paginator .ui-paginator-first:not(.ui-state-disabled):not(.ui-state-act
     opacity: 0.8;
     color: #fff;
     background-color: #019eee;
+}
+
+/******************************** Prime NG Tooltip***************************************/
+
+i.action {
+    cursor: pointer;
+    font-size: 1.4em;
+}
+
+.ui-tooltip .ui-tooltip-text {
+    color: #fdb414 !important;
+}
+
+/******************************** Prime NG Toast***************************************/
+
+.ui-toast.ui-widget.ui-toast-top-center {
+    margin-top: 41px !important;
+}
+
+/******************************** Prime NG Grid System***************************************/
+
+.ui-g-1, .ui-g-2, .ui-g-3, .ui-g-4, .ui-g-5, .ui-g-6, .ui-g-7, .ui-g-8, .ui-g-9, .ui-g-10, .ui-g-11, .ui-g-12 {
+    padding: 0.3em
 }
 
 /**********************************UI DIALOG & OVERLAY***********************************/
@@ -1086,13 +1139,12 @@ body .ui-dialog .ui-dialog-footer {
     border-top: 1px solid #fdb414;
 }
 
-
 /************************APP******************************/
 
 .page-wrapper {
-    padding: 75px 15px 15px 75px
+    padding: 60px 15px 15px 75px
 }
 
-input.invalid::placeholder{
+input.invalid::placeholder {
     color: red
 }

@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
     }
 
     getUserDetails() {
-        this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/Common/GetLoginUser', {})
+        this._sharedService.post(this._sharedService.getValue('endpoint') + '/api/GetLoginUser', {})
             .subscribe(response => {
                 this.spinner = false;
                 localStorage.setItem('username', response.UserName);
