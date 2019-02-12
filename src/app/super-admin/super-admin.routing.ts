@@ -21,7 +21,6 @@ const superAdminRoutes: Routes = [
       { path: 'ho-id-management', component: HoIdManagementComponent },
       { path: 'menu-rights-management', component: MenuRightsManagementComponent },
       { path: 'feedback-form-view', component: FeedbackFormViewComponent },
-      
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   }
